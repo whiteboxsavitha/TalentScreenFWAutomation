@@ -1,0 +1,50 @@
+{
+
+"logout.button":".navbar-btn.btn.btn-primary",
+ "input.login":"#username",
+ "login.pw":"#password",
+ "login.submit":".//*[@id='mySigninForm']/a",
+ "login.text":".link-white.text-underline",
+
+ "signup.button":".navbar-btn.btn.btn-success",
+ "signup.un":"#emailAddress",
+ "input.password":"#ePassword",
+ "input.confirmpw":"#mPassword",
+ "checkbox.employer":".//input[@id='candidate']",
+ "terms.condition":".//input[@id='terms']",
+ "create.account.btn":".//*[@id='mySignUpForm']/div[6]/input",
+ "signup.done":".panel-body>h4",
+ "activate.email":".//*[@id='content']/div/div/div/div[2]/div/div[2]/a",
+
+ "fb.login":".fa.fa-facebook",
+ "fb.un":"#email",
+ "fb.pw":"#pass",
+ "fb.submit":"input[type='submit']",
+ "fb.confirm":".//h1",
+
+ "ll.login":".btn.btn-pink-500.btn-circle",
+ "ll.un":"#session_key-oauth2SAuthorizeForm",
+ "ll.pw":"#session_password-oauth2SAuthorizeForm",
+ "ll.submit":".allow",
+ "ll.confirm":".icon",
+
+ "gh.login":".btn.btn-green-500.btn-circle",
+ "gh.un":"#login_field",
+ "gh.pw":"#password",
+ "gh.submit":".btn.btn-primary.btn-block",
+ "gh.confirm":".//*[@id='js-pjax-container']/div/div[3]/div/h2",
+
+ "gp.login":".btn.btn-danger.btn-circle",
+ "gp.un":"#Email",
+ "gp.next":".//*[@id='next']",
+ "gp.pw":"#Passwd",
+ "gp.submit":".//*[@id='signIn']",
+ "gp.confirm":".//*[@id='main-nav']/div/a",
+
+ "tw.login":".//*[@id='content']/div/div/div/p/a[5]",
+ "tw.un":"#username_or_email",
+ "tw.pw":"#password",
+ "tw.submit":"#allow",
+ "tw.confirm":".link-white.text-underline"
+
+}

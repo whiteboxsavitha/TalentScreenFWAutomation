@@ -1,0 +1,18 @@
+<suite name="TalentScreening" verbose="1">
+    <test name="SignupLoginTests">
+         <classes>
+             <!-- // StudentLoginPage -->
+                <parameter name="sheetName" value="StudentLogin"></parameter>
+                <class name="com.talentscreen.test.LoginTest"/>
+
+             <!--   <parameter name="sheetName" value="StudentSignUp"></parameter>
+                <class name="com.talentscreen.test.SignUpTest"/>
+
+             Employess Signup
+                 <parameter name="sheetName" value="EmployeeSignUp"></parameter>
+                 <class name="com.talentscreen.test.SignUpTest"/>
+            -->
+
+         </classes>
+    </test>
+</suite>
