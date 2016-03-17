@@ -27,6 +27,7 @@ public class LoginPage extends BasePage{
         }
         else if (typeoflg.equals("LI"))
         {
+
             s = performLiSignIn(userName, password);
                 return s;
         }
@@ -40,35 +41,50 @@ public class LoginPage extends BasePage{
                 return s;
         }
         else
-        {   d.getBrowser();
-            d.getMainWindowHandler();
+        {
+            d.getwWindowHandles(false);
+
             d.findElement("input.login").sendKeys(userName);
             d.findElement("login.pw").sendKeys(password);
             d.findElement("xpath=login.submit").click();
-            d.waitForLoad();
+    //        d.waitForLoad();
+            try {
+                d.implicitWait();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            boolean a = d.findElement("login.text").isDisplayed();
+            if (a == true)
+                return "View public profile";
+            else
+                return "no match";
+
+/*
             HtmlElement a = d.findElement("login.text");
-                        s = a.getText();
+            s = a.getText();
             return s;
+*/
         }
 }
 
     //FaceBook
     public String performFbSignIn(String userName,String password)
     {
-       // d.getBrowser();
-        // d.getMainWindowHandler();
-
+            d.getwWindowHandles(false);
             d.findElement("fb.login").click();
             d.getwWindowHandles(false);
             d.waitForLoad();
             d.findElement("fb.un").sendKeys(userName);
             d.findElement("fb.pw").sendKeys(password);
             d.findElement("fb.submit").click();
+
             d.getwWindowHandles(false);
-            d.waitForLoad();
-            d.waitForLoad();
-            d.waitForLoad();
-            d.waitForLoad();
+        try {
+            d.implicitWait();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
             boolean a = d.findElement("xpath=fb.confirm").isDisplayed();
             if (a == true)
                 return "View public profile";
@@ -79,24 +95,43 @@ public class LoginPage extends BasePage{
     //LinkedIn
     public String performLiSignIn(String userName,String password)
     {
+            d.getwWindowHandles(false);
             d.findElement("ll.login").click();
+            d.getwWindowHandles(false);
             d.findElement("ll.un").sendKeys(userName);
             d.findElement("ll.pw").sendKeys(password);
             d.findElement("ll.submit").click();
             d.getwWindowHandles(false);
-            HtmlElement a = d.findElement("login.text");
-            String s = a.getText();
-            return s;
+        try {
+            d.implicitWait();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        boolean a = d.findElement("ll.confirm").isDisplayed();
+        System.out.print(a);
+        if (a == true)
+            return "View public profile";
+        else
+            return "no match";
     }
 
     //GitHub
     public String performGitHubSignin(String userName,String password)
     {
+        d.getwWindowHandles(false);
+
         d.findElement("gh.login").click();
         d.getwWindowHandles(false);
         d.findElement("gh.un").sendKeys(userName);
         d.findElement("gh.pw").sendKeys(password);
         d.findElement("gh.submit").click();
+        try {
+            d.implicitWait();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         boolean a = d.findElement("xpath=gh.confirm").isDisplayed();
         if (a == true)
           return "View public profile";
@@ -107,15 +142,20 @@ public class LoginPage extends BasePage{
     //Google+
     public String performGooglePSignin(String userName,String password)
     {
-        d.waitForLoad();
+        d.getwWindowHandles(false);
         d.findElement("gp.login").click();
         d.getwWindowHandles(false);
         d.findElement("gp.un").sendKeys(userName);
+        d.findElement("gp.next").click();
         d.findElement("gp.pw").sendKeys(password);
         d.findElement("xpath=gp.submit").click();
-        d.waitForLoad();
-        String sr = d.getTitle();
-        boolean a = d.findElement("text.login").isDisplayed();
+        d.getwWindowHandles(false);
+        try {
+            d.implicitWait();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        boolean a = d.findElement("gp.confirm").isDisplayed();
         if (a == true)
             return "View public profile";
         else
@@ -125,26 +165,30 @@ public class LoginPage extends BasePage{
     //Twitter
     public String performTweeterSignin(String userName,String password)
     {
-        d.waitForLoad();
+
+        d.getwWindowHandles(false);
         d.findElement("xpath=tw.login").click();
         d.getwWindowHandles(false);
         d.waitForLoad();
         d.findElement("tw.un").sendKeys(userName);
-        d.waitForLoad();
         d.findElement("tw.pw").sendKeys(password);
         d.findElement("tw.submit").click();
         d.getwWindowHandles(false);
-        HtmlElement a = d.findElement("login.text");
-        String s = a.getText();
-        return s;
+        try {
+            d.implicitWait();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        boolean a = d.findElement("login.text").isDisplayed();
+        if (a == true)
+            return "View public profile";
+        else
+            return "no match";
     }
 
     //Logout
     public void Logout()
     {
-        d.close();
-    }
-
- //   public void closewindow()
-
+          d.findElement("xpath=logout.button").click();
+     }
 }

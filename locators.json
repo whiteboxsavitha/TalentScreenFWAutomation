@@ -1,6 +1,7 @@
 {
 
-"logout.button":".navbar-btn.btn.btn-primary",
+ "logout.button":".//*[@id='main-nav']/div/a",
+
  "input.login":"#username",
  "login.pw":"#password",
  "login.submit":".//*[@id='mySigninForm']/a",
@@ -26,7 +27,7 @@
  "ll.un":"#session_key-oauth2SAuthorizeForm",
  "ll.pw":"#session_password-oauth2SAuthorizeForm",
  "ll.submit":".allow",
- "ll.confirm":".icon",
+ "ll.confirm":".label.bg-blue-500",
 
  "gh.login":".btn.btn-green-500.btn-circle",
  "gh.un":"#login_field",
@@ -36,10 +37,10 @@
 
  "gp.login":".btn.btn-danger.btn-circle",
  "gp.un":"#Email",
- "gp.next":".//*[@id='next']",
+ "gp.next":"#next",
  "gp.pw":"#Passwd",
  "gp.submit":".//*[@id='signIn']",
- "gp.confirm":".//*[@id='main-nav']/div/a",
+ "gp.confirm":".img-circle.width-80",
 
  "tw.login":".//*[@id='content']/div/div/div/p/a[5]",
  "tw.un":"#username_or_email",

@@ -25,7 +25,7 @@ public class LoginTest extends BaseTest{
     @BeforeClass
     @Parameters({"sheetName"})
     public void beforeClass(String sheetName) {
-        _sl= new LoginPage(d);
+
          this.sheetName = sheetName;
    }
 
@@ -45,9 +45,13 @@ public class LoginTest extends BaseTest{
     @Test(dataProvider = "users-data", enabled = true)
     public void StudentLoginTest(String uname,String pwd, String typeoflg)throws IOException
     {
+        _sl= new LoginPage(d);
             Signin = _sl.performSignIn(uname, pwd, typeoflg);
             assertEquals(Signin, "View public profile");
-          //  _sl.Logout();
+            _sl.Logout();
+
+           // _sl= new LoginPage(d);
+
 
     }
 }

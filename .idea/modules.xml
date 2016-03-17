@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AutoFWTalentScreening.iml" filepath="$PROJECT_DIR$/AutoFWTalentScreening.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WhiteBoxQATalentScreening.iml" filepath="$PROJECT_DIR$/WhiteBoxQATalentScreening.iml" />
     </modules>
   </component>
 </project>

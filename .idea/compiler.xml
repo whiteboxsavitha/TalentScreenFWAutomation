@@ -17,16 +17,16 @@
       <profile default="true" name="Default" enabled="false">
         <processorPath useClasspath="true" />
       </profile>
-      <profile default="false" name="Annotation profile for AutoFWTalentScreening" enabled="true">
+      <profile default="false" name="Annotation profile for WhiteBoxQATalentScreening" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="AutoFWTalentScreening" />
+        <module name="WhiteBoxQATalentScreening" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="AutoFWTalentScreening" target="1.7" />
+      <module name="WhiteBoxQATalentScreening" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
