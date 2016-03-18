@@ -125,7 +125,7 @@ public class PageDriver implements ElementsContainer {
 
     public void implicitWait() throws Exception {
         if (_browser != Browsers.HtmlUnit) {
-            _webDriver.manage().timeouts().implicitlyWait(8000, TimeUnit.MILLISECONDS);
+            _webDriver.manage().timeouts().implicitlyWait(7000, TimeUnit.MILLISECONDS);
             return;
         }
         Thread.sleep(2000);

@@ -148,9 +148,7 @@ public class LoginPage extends BasePage{
         d.getwWindowHandles(false);
         d.findElement("gp.un").sendKeys(userName);
         d.findElement("gp.next").click();
- //      d.waitForLoad();
         d.findElement("gp.pw").sendKeys(password);
-//        d.waitForLoad();
         d.findElement("xpath=gp.submit").click();
         try {
             d.implicitWait();
@@ -171,20 +169,19 @@ public class LoginPage extends BasePage{
     public String performTweeterSignin(String userName,String password)
     {
         d.getwWindowHandles(false);
-      // d.waitForLoad();
         d.findElement("xpath=tw.login").click();
         d.getwWindowHandles(false);
         d.waitForLoad();
         d.findElement("tw.un").sendKeys(userName);
         d.findElement("tw.pw").sendKeys(password);
         d.findElement("tw.submit").click();
-       d.getwWindowHandles(false);
         try {
             d.implicitWait();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        d.getwWindowHandles(false);
+     d.getwWindowHandles(false);
+       // d.waitForLoad();
         boolean a = d.findElement("login.text").isDisplayed();
         if (a == true)
             return "View public profile";
