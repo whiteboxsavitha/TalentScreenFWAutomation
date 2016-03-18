@@ -14,7 +14,8 @@ import static org.testng.Assert.assertEquals;
 /**
  * Created by Savi on 3/11/2016.
  */
-public class EmployeeSigupTest extends BaseTest{
+public class EmployeeSigupTest extends BaseTest
+{
 
     private SignUpPage _ssup;
     private String sheetName;
@@ -27,12 +28,13 @@ public class EmployeeSigupTest extends BaseTest{
     }
 
     @DataProvider(name = "users-data")
-    public Object[][] getUsers() throws Exception {
+    public Object[][] getUsers() throws Exception
+    {
         Object[][] data = excelUtils.getSimpleExcelData(d._configuration.DataFileName,sheetName);
-        System.out.print(data);
         return data;
     }
-   @Test(dataProvider = "users-data", enabled = true, groups = "Positive Test")
+
+    @Test(dataProvider = "users-data", enabled = true, groups = "Positive Test")
     public void EmployeeSignupTest(String uname,String pwd, String confirmPw)throws IOException
     {
         String output = _ssup.performEmployeeSignup(uname, pwd, confirmPw);

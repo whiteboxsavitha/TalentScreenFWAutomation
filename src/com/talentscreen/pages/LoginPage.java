@@ -24,7 +24,7 @@ public class LoginPage extends BasePage{
         {
                 s = performGitHubSignin(userName, password);
                  d.close();
-                d.getwWindowHandles(false);
+              d.getwWindowHandles(false);
                 return s;
         }
         else if (typeoflg.equals("LI"))
@@ -43,19 +43,18 @@ public class LoginPage extends BasePage{
         }
         else
         {
-         //   d.getwWindowHandles(false);
-
+            //Normal
+            //d.getwWindowHandles(false);
             d.findElement("input.login").sendKeys(userName);
             d.findElement("login.pw").sendKeys(password);
             d.findElement("xpath=login.submit").click();
-    //        d.waitForLoad();
+
             try {
                 d.implicitWait();
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
-            boolean a = d.findElement("login.text").isDisplayed();
+             boolean a = d.findElement("login.text").isDisplayed();
             if (a == true)
                 return "View public profile";
             else
@@ -180,8 +179,7 @@ public class LoginPage extends BasePage{
         } catch (Exception e) {
             e.printStackTrace();
         }
-     d.getwWindowHandles(false);
-       // d.waitForLoad();
+         d.getwWindowHandles(false);
         boolean a = d.findElement("login.text").isDisplayed();
         if (a == true)
             return "View public profile";
@@ -193,5 +191,5 @@ public class LoginPage extends BasePage{
     public void Logout()
     {
           d.findElement("xpath=logout.button").click();
-     }
+    }
 }

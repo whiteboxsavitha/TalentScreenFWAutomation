@@ -17,17 +17,18 @@ import static org.testng.Assert.assertTrue;
 /**
  * Created by Savi on 3/7/2016.
  */
-public class LoginTest extends BaseTest{
+public class LoginTest extends BaseTest
+{
     private LoginPage _sl;
     private String sheetName;
     private String Signin = "";
 
     @BeforeClass
     @Parameters({"sheetName"})
-    public void beforeClass(String sheetName) {
-
+    public void beforeClass(String sheetName)
+    {
          this.sheetName = sheetName;
-   }
+    }
 
     @AfterTest
     public void close()
@@ -42,16 +43,12 @@ public class LoginTest extends BaseTest{
         return data;
     }
 
-    @Test(dataProvider = "users-data", enabled = true)
+    @Test(dataProvider = "users-data", enabled = true, groups = "Positive Tests")
     public void StudentLoginTest(String uname,String pwd, String typeoflg)throws IOException
     {
-        _sl= new LoginPage(d);
+            _sl= new LoginPage(d);
             Signin = _sl.performSignIn(uname, pwd, typeoflg);
             assertEquals(Signin, "View public profile");
             _sl.Logout();
-
-           // _sl= new LoginPage(d);
-
-
     }
 }
