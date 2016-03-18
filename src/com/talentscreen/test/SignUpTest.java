@@ -29,23 +29,14 @@ public class SignUpTest extends BaseTest{
     @DataProvider(name = "users-data")
     public Object[][] getUsers() throws Exception {
         Object[][] data = excelUtils.getSimpleExcelData(d._configuration.DataFileName,sheetName);
-        System.out.print(data);
         return data;
     }
 
-
-    @Test(dataProvider = "users-data", enabled = true)
+    @Test(dataProvider = "users-data", enabled = true, groups = "Positive Test")
     public void SignupTest(String uname,String pwd, String confirmPw)throws IOException
     {
          String output = _ssup.performStudentSignUp(uname, pwd, confirmPw);
          assertEquals(output, "hi this active email");
+
     }
-    @Test(dataProvider = "users-data", enabled = false)
-    public void EmployeeSignupTest(String uname,String pwd, String confirmPw)throws IOException
-    {
-        String output = _ssup.performEmployeeSignup(uname, pwd, confirmPw);
-        assertEquals(output, "your sucessfully Register please log in");
-    };
-
-
 }

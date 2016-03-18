@@ -44,11 +44,19 @@ public class SignUpPage extends BasePage {
 
     public String performEmployeeSignup(String userName, String password, String confirmPassword)
     {
+        d.waitForLoad();
+
         d.findElement("signup.button").click();
+        d.waitForLoad();
+        try {
+            d.implicitWait();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         d.findElement("signup.un").sendKeys(userName);
         d.findElement("input.password").sendKeys(password);
         d.findElement("input.confirmpw").sendKeys(confirmPassword);
-        d.findElement("xpath=checkbox.employer").click();
+        //d.findElement("xpath=checkbox.employer").click();
         d.findElement("xpath=terms.condition").click();
         d.findElement("xpath=create.account.btn").click();
 

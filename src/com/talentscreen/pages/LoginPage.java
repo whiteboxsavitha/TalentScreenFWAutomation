@@ -17,23 +17,24 @@ public class LoginPage extends BasePage{
         String s = "";
         if (typeoflg.equals("FB"))
         {
-            s = performFbSignIn(userName, password);
+                s = performFbSignIn(userName, password);
                 return s;
         }
         else if (typeoflg.equals("GH"))
         {
-            s = performGitHubSignin(userName, password);
+                s = performGitHubSignin(userName, password);
+                 d.close();
+                d.getwWindowHandles(false);
                 return s;
         }
         else if (typeoflg.equals("LI"))
         {
-
             s = performLiSignIn(userName, password);
-                return s;
+            return s;
         }
         else if (typeoflg.equals("GP")) {
             s = performGooglePSignin(userName, password);
-                return s;
+            return s;
         }
         else if (typeoflg.equals("TW"))
         {
@@ -42,7 +43,7 @@ public class LoginPage extends BasePage{
         }
         else
         {
-            d.getwWindowHandles(false);
+         //   d.getwWindowHandles(false);
 
             d.findElement("input.login").sendKeys(userName);
             d.findElement("login.pw").sendKeys(password);
@@ -109,7 +110,7 @@ public class LoginPage extends BasePage{
         }
 
         boolean a = d.findElement("ll.confirm").isDisplayed();
-        System.out.print(a);
+      //  System.out.print(a);
         if (a == true)
             return "View public profile";
         else
@@ -147,15 +148,19 @@ public class LoginPage extends BasePage{
         d.getwWindowHandles(false);
         d.findElement("gp.un").sendKeys(userName);
         d.findElement("gp.next").click();
+ //      d.waitForLoad();
         d.findElement("gp.pw").sendKeys(password);
+//        d.waitForLoad();
         d.findElement("xpath=gp.submit").click();
-        d.getwWindowHandles(false);
         try {
             d.implicitWait();
         } catch (Exception e) {
             e.printStackTrace();
         }
+        d.getwWindowHandles(false);
+
         boolean a = d.findElement("gp.confirm").isDisplayed();
+
         if (a == true)
             return "View public profile";
         else
@@ -165,20 +170,21 @@ public class LoginPage extends BasePage{
     //Twitter
     public String performTweeterSignin(String userName,String password)
     {
-
         d.getwWindowHandles(false);
+      // d.waitForLoad();
         d.findElement("xpath=tw.login").click();
         d.getwWindowHandles(false);
         d.waitForLoad();
         d.findElement("tw.un").sendKeys(userName);
         d.findElement("tw.pw").sendKeys(password);
         d.findElement("tw.submit").click();
-        d.getwWindowHandles(false);
+       d.getwWindowHandles(false);
         try {
             d.implicitWait();
         } catch (Exception e) {
             e.printStackTrace();
         }
+        d.getwWindowHandles(false);
         boolean a = d.findElement("login.text").isDisplayed();
         if (a == true)
             return "View public profile";
